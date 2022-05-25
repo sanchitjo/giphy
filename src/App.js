@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import styled from 'styled-components'
+import Trending from './components/Trending';
 
-function App() {
+
+
+
+const Wrapper = styled.div`
+background-color: black;
+height: 400vh;
+padding: 1rem 5rem 1rem 5rem;
+
+@media only screen and (max-width: 450px) {
+  height: 1500vh;
+}
+`
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Trending />
+    </Wrapper>
   );
 }
 

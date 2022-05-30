@@ -53,6 +53,7 @@ height: 350px;
 margin-top: 100px;
 
 @media only screen and (max-width: 450px) {
-    display: none;
+    height: 200px;
+    display: block;
 }
 `

@@ -45,13 +45,6 @@ const Trending = () => {
         }
     }
 
-    const noGifsFound = () => {
-        if (gifData.length === 0) {
-            return (
-                <NoDataMessage>No Gifs found.</NoDataMessage>
-            )
-        }
-    }
 
     return (
         <>
@@ -63,7 +56,8 @@ const Trending = () => {
                 isLoading ? (
                     <LoadingImg src={loadingBar} alt='loading...' />
                 ) : (
-
+                   !isLoading && gifData.length===0 ? (<NoDataMessage>No Gifs found.</NoDataMessage>
+                    ) : (
                     <Cards>
                         {
                             gifData.map((data) => {
@@ -75,17 +69,15 @@ const Trending = () => {
                             })
                         }
                     </Cards>
+                    )
                 )
                 
             }
-            {noGifsFound()}
         </>
     )
 
 
 
 }
-
-
-
 export default Trending
+
